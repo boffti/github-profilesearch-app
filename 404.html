@@ -13,9 +13,19 @@
   
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+  // See http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
+  (function(){
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect != location.href) {
+      history.replaceState(null, null, redirect);
+    }
+  })();
+</script>
 </head>
 <body>
   <app-root>Loading...</app-root>
-<script type="text/javascript" src="inline.js"></script><script type="text/javascript" src="styles.8faf1ff894816124b076.bundle.js"></script><script type="text/javascript" src="main.1e7cf4043de915b454ab.bundle.js"></script></body>
+<script type="text/javascript" src="inline.js"></script><script type="text/javascript" src="styles.8faf1ff894816124b076.bundle.js"></script><script type="text/javascript" src="main.5b85e0d5cc83d20f7486.bundle.js"></script></body>
 <!<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 </html>
