@@ -1,83 +1,84 @@
- <div class="row">
-            <div class="col s12 m11">
-              <form>
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Enter Github Username..." [(ngModel)]="username" name="username" (keyup)="searchUser()">
-                </div>
-              </form>
+<div class="row">
+    <div class="col s12 m11">
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Github Username..." [(ngModel)]="username" name="username" (keyup)="searchUser()">
             </div>
-          </div>
+        </form>
+    </div>
+</div>
 
 
 <div *ngIf="user">
     <div class="row">
         <div class="col s12 m3">
-          <div class="card">
-            <div class="card-image medium">
-              <img src="{{user.avatar_url}}">
-          </div>
-            <div class="card-action">
-              <a class="btn-floating btn-large waves-effect waves-light red" target="_blank" href="{{user.html_url}}"><i class="material-icons">perm_identity</i></a>
-              <span class="card-title custom-margin">{{user.name}}</span>
+            <div class="card">
+                <div class="card-image medium">
+                    <img src="{{user.avatar_url}}">
+                </div>
+                <div class="card-action">
+                    <a class="btn-floating btn-large waves-effect waves-light red" target="_blank" href="{{user.html_url}}"><i class="material-icons">perm_identity</i></a>
+                    <span class="card-title custom-margin">{{user.name}}</span>
+                </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col s12 m12">
-              <div class="card-panel white"><div class="row">
-                <div class="col s6 m6">
-                  <span class="label label-warning">{{user.public_repos}} Public Repos</span>
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card-panel white">
+                        <div class="row">
+                            <div class="col s6 m6">
+                                <span class="label label-warning">{{user.public_repos}} Public Repos</span>
+                            </div>
+                            <div class="col s6 m6">
+                                <span class="label label-primary">{{user.public_gists}} Public Gists</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6 m6">
+                                <span class="label label-success">{{user.followers}} Followers</span>
+                            </div>
+                            <div class="col s6 m6">
+                                <span class="label label-info">{{user.public_repos}} Following</span>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
-                <div class="col s6 m6">
-                  <span class="label label-primary">{{user.public_gists}} Public Gists</span>
+                <div class="col s12 m12">
+                    <div class="card-panel hoverable">
+                        <ul class="collection">
+                            <li class="collection-item"><strong>Username:</strong> {{user.login}}</li>
+                            <li class="collection-item"><strong>Location:</strong> {{user.location}}</li>
+                            <li class="collection-item"><strong>Blog:</strong> <a target="_blank" href="{{user.blog}}">{{user.blog}}</a></li>
+                            <li class="collection-item"><strong>Member Since:</strong> {{user.created_at}}</li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col s6 m6">
-                    <span class="label label-success">{{user.followers}} Followers</span>
-                </div>
-                <div class="col s6 m6">
-                  <span class="label label-info">{{user.public_repos}} Following</span>
-                </div>
-              </div>
-              
-              
-        </div>
             </div>
-      <div class="col s12 m12">
-        <div class="card-panel hoverable">
-          <ul class="collection">
-        <li class="collection-item"><strong>Username:</strong> {{user.login}}</li>
-        <li class="collection-item"><strong>Location:</strong> {{user.location}}</li>
-        <li class="collection-item"><strong>Blog:</strong> <a target="_blank" href="{{user.blog}}">{{user.blog}}</a></li>
-        <li class="collection-item"><strong>Member Since:</strong> {{user.created_at}}</li>
-      </ul>
-        </div>  
-      </div>
-      </div>
         </div>
         <div class="col s12 m8">
-         
-        <div class="card-panel white">
-         <h4>Repositories</h4>
-      <div class="row">
-      <div *ngFor="let repo of repos">
-      
-          <div class="col s12 m4">
-            <div class="card-panel white fixed-size hoverable">
-            <div class="card-content">
-              <h5 class="card-title truncate">{{repo.name}}</h5>
-              <p class="truncate">{{repo.description}}</p>
+
+            <div class="card-panel white">
+                <h4>Repositories</h4>
+                <div class="row">
+                    <div *ngFor="let repo of repos">
+
+                        <div class="col s12 m4">
+                            <div class="card-panel white fixed-size hoverable">
+                                <div class="card-content">
+                                    <h5 class="card-title truncate">{{repo.name}}</h5>
+                                    <p class="truncate">{{repo.description}}</p>
+                                </div>
+                                <br>
+                                <div class="card-action custom-margin2">
+                                    <span class="label label-primary">{{repo.watchers}} Watchers</span>
+                                    <span class="label label-danger">{{repo.forks}} Forks</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br>
-            <div class="card-action custom-margin2">
-              <span class="label label-primary">{{repo.watchers}} Watchers</span>
-              <span class="label label-danger">{{repo.forks}} Forks</span>
-            </div>
-          </div>  
         </div>
-        </div>
-      </div>
-        </div>
-      </div>
-        </div>    
-</div> 
+    </div>
+</div>
