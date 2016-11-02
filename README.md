@@ -21,7 +21,7 @@ GP Search uses a number of open source projects to work properly:
 * [node.js] - evented I/O for the backend
 
 
-And of course ngSpotify itself is open source
+And of course GP Search itself is open source
 
 
 
